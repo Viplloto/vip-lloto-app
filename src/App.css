@@ -1,0 +1,392 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at top, #173a72 0%, #091a38 45%, #030914 100%);
+  color: white;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  width: min(1100px, 94%);
+  margin: 0 auto;
+  padding: 30px 0 60px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  background: linear-gradient(135deg, #13356e, #2456a5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.topbar h1 {
+  margin: 0 0 8px;
+  font-size: clamp(34px, 6vw, 58px);
+  letter-spacing: 2px;
+}
+
+.topbar p {
+  margin: 0;
+  color: #dce9ff;
+  font-weight: bold;
+}
+
+.balance,
+.slot-balance {
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #25c96f, #0ba65a);
+  box-shadow: 0 8px 22px rgba(11, 166, 90, 0.35);
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.menu button {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 18px;
+  background: #3679d8;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.menu button:hover {
+  background: #4a8ff0;
+  transform: translateY(-1px);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 18px;
+}
+
+.matches,
+.betslip,
+.history,
+.fruit-machine {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(27, 59, 111, 0.72);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
+}
+
+.matches,
+.betslip {
+  padding: 22px;
+}
+
+.matches h2,
+.betslip h2,
+.history h2,
+.fruit-machine h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.match {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.match:last-child {
+  border-bottom: 0;
+}
+
+.match-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.match-info span {
+  color: #c5d6f7;
+  font-size: 14px;
+}
+
+.odds {
+  display: flex;
+  gap: 8px;
+}
+
+.odds button {
+  min-width: 68px;
+  border: 0;
+  border-radius: 9px;
+  padding: 10px;
+  background: linear-gradient(135deg, #0cc0df, #168cff);
+  color: white;
+  font-weight: bold;
+}
+
+.odds button:hover {
+  transform: scale(1.04);
+  filter: brightness(1.08);
+}
+
+.betslip {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.betslip input {
+  width: 100%;
+  border: 1px solid #85aaf0;
+  border-radius: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #14213d;
+}
+
+.limits {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #dce9ff;
+  font-size: 14px;
+}
+
+.place-bet,
+.betslip > button {
+  border: 0;
+  border-radius: 10px;
+  padding: 13px;
+  background: linear-gradient(135deg, #33d980, #12ad5d);
+  color: white;
+  font-weight: bold;
+}
+
+.history {
+  margin-top: 18px;
+  padding: 22px;
+}
+
+.history-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.fruit-machine-page {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.fruit-machine {
+  width: min(700px, 100%);
+  padding: 28px;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(115, 80, 255, 0.45), transparent 45%),
+    linear-gradient(160deg, #172c64, #091534);
+}
+
+.fruit-machine h2 {
+  margin-bottom: 18px;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffd95a;
+  text-shadow:
+    0 0 10px rgba(255, 217, 90, 0.8),
+    0 0 22px rgba(255, 135, 0, 0.55);
+}
+
+.slot-balance {
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.slot-reels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 470px;
+  margin: 0 auto 24px;
+  padding: 18px;
+  border: 5px solid #e8b83f;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #4b2604, #1b0d02);
+  box-shadow:
+    0 0 18px rgba(255, 193, 7, 0.7),
+    inset 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.slot-reel {
+  display: grid;
+  place-items: center;
+  min-height: 130px;
+  border: 4px solid #e1e7f0;
+  border-radius: 15px;
+  background: linear-gradient(180deg, #ffffff, #dfe8f4);
+  color: #111;
+  font-size: clamp(54px, 10vw, 82px);
+  box-shadow:
+    inset 0 6px 15px rgba(0, 0, 0, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.slot-bets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 18px;
+}
+
+.slot-bets button {
+  border: 2px solid #8eb5ff;
+  border-radius: 9px;
+  padding: 9px 15px;
+  background: #16366f;
+  color: white;
+  font-weight: bold;
+}
+
+.slot-bets button:hover,
+.slot-bets .active-bet {
+  border-color: #ffd95a;
+  background: #ffd95a;
+  color: #241400;
+  transform: translateY(-2px);
+}
+
+.spin-button {
+  width: min(360px, 100%);
+  border: 0;
+  border-radius: 999px;
+  padding: 18px 25px;
+  background: linear-gradient(180deg, #ffdf57, #ff9f00);
+  color: #321900;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  box-shadow:
+    0 8px 0 #a75a00,
+    0 14px 25px rgba(0, 0, 0, 0.42),
+    0 0 22px rgba(255, 179, 0, 0.55);
+}
+
+.spin-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.spin-button:active:not(:disabled) {
+  transform: translateY(5px);
+  box-shadow:
+    0 3px 0 #a75a00,
+    0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.spin-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.slot-message {
+  min-height: 28px;
+  margin: 24px 0 15px;
+  font-size: 18px;
+  color: #ffe889;
+}
+
+.slot-rules {
+  color: #d7e5ff;
+}
+
+.slot-rules p {
+  margin: 6px 0;
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .match {
+    grid-template-columns: 1fr;
+  }
+
+  .odds {
+    width: 100%;
+  }
+
+  .odds button {
+    flex: 1;
+  }
+
+  .slot-reel {
+    min-height: 95px;
+    font-size: 48px;
+  }
+}
+.menu {
+  display: flex;
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.menu button {
+  background: linear-gradient(135deg, #2d7ff9, #1b5fd1);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+
+.menu button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #43a5ff, #2677ff);
+}
+
+.menu button:active {
+  transform: scale(0.97);
+}
